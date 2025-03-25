@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable no-underscore-dangle */
 // app.js
 import express from 'express';
@@ -26,7 +27,7 @@ app.get('/ejercicios', async (req, res) => {
     return res.status(200).json(ejercicios);
   } catch (error) {
     console.error('Error al leer el archivo:', error);
-    res.status(500).json({ message: 'Error al leer el archivo' });
+    return res.status(500).json({ message: 'Error al leer el archivo' });
   }
 });
 
