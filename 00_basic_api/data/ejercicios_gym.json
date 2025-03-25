@@ -1,83 +1,200 @@
 [
-    {
-      "nombre": "Prensa de Banca",
-      "grupo_muscular": "Pecho",
-      "equipo": "Barra",
-      "dificultad": "Intermedio",
-      "repeticiones": 8,
-      "series": 3
-    },
-    {
-      "nombre": "Dominada",
-      "grupo_muscular": "Espalda",
-      "equipo": "Barra de Dominadas",
-      "dificultad": "Avanzado",
-      "repeticiones": 12,
-      "series": 3
-    },
-    {
-      "nombre": "Sentadilla",
-      "grupo_muscular": "Piernas",
-      "equipo": "Barra",
-      "dificultad": "Intermedio",
-      "repeticiones": 10,
-      "series": 3
-    },
-    {
-      "nombre": "Plancha",
-      "grupo_muscular": "Core",
-      "equipo": "Peso corporal",
-      "dificultad": "Principiante",
-      "repeticiones": 60,
-      "series": 3
-    },
-    {
-      "nombre": "Peso Muerto",
-      "grupo_muscular": "Isquiotibiales",
-      "equipo": "Barra",
-      "dificultad": "Avanzado",
-      "repeticiones": 8,
-      "series": 3
-    },
-    {
-      "nombre": "Peso Alternado",
-      "grupo_muscular": "Piernas",
-      "equipo": "Mancuernas",
-      "dificultad": "Intermedio",
-      "repeticiones": 12,
-      "series": 3
-    },
-    {
-      "nombre": "Prensa de Hombros",
-      "grupo_muscular": "Hombros",
-      "equipo": "Mancuernas",
-      "dificultad": "Intermedio",
-      "repeticiones": 10,
-      "series": 3
-    },
-    {
-      "nombre": "Curl de Bíceps",
-      "grupo_muscular": "Bíceps",
-      "equipo": "Mancuernas",
-      "dificultad": "Principiante",
-      "repeticiones": 15,
-      "series": 3
-    },
-    {
-      "nombre": "Flexión de Tríceps",
-      "grupo_muscular": "Tríceps",
-      "equipo": "Banco",
-      "dificultad": "Intermedio",
-      "repeticiones": 12,
-      "series": 3
-    },
-    {
-      "nombre": "Prensa de Piernas",
-      "grupo_muscular": "Piernas",
-      "equipo": "Máquina de Prensa de Piernas",
-      "dificultad": "Intermedio",
-      "repeticiones": 10,
-      "series": 3
-    }
-  ]
-  
+  {
+    "id": 2,
+    "nombre": "Sentadilla",
+    "grupo_muscular": "Piernas",
+    "equipo": "Barra",
+    "dificultad": "Intermedio",
+    "repeticiones": 10,
+    "series": 3
+  },
+  {
+    "id": 3,
+    "nombre": "Plancha",
+    "grupo_muscular": "Core",
+    "equipo": "Peso corporal",
+    "dificultad": "Principiante",
+    "repeticiones": 60,
+    "series": 3
+  },
+  {
+    "id": 4,
+    "nombre": "Peso Muerto",
+    "grupo_muscular": "Isquiotibiales",
+    "equipo": "Barra",
+    "dificultad": "Avanzado",
+    "repeticiones": 8,
+    "series": 3
+  },
+  {
+    "id": 5,
+    "nombre": "Peso Alternado",
+    "grupo_muscular": "Piernas",
+    "equipo": "Mancuernas",
+    "dificultad": "Intermedio",
+    "repeticiones": 12,
+    "series": 3
+  },
+  {
+    "id": 6,
+    "nombre": "Prensa de Hombros",
+    "grupo_muscular": "Hombros",
+    "equipo": "Mancuernas",
+    "dificultad": "Intermedio",
+    "repeticiones": 10,
+    "series": 3
+  },
+  {
+    "id": 7,
+    "nombre": "Curl de Bíceps",
+    "grupo_muscular": "Bíceps",
+    "equipo": "Mancuernas",
+    "dificultad": "Principiante",
+    "repeticiones": 15,
+    "series": 3
+  },
+  {
+    "id": 8,
+    "nombre": "Flexión de Tríceps",
+    "grupo_muscular": "Tríceps",
+    "equipo": "Banco",
+    "dificultad": "Intermedio",
+    "repeticiones": 12,
+    "series": 3
+  },
+  {
+    "id": 9,
+    "nombre": "Prensa de Piernas",
+    "grupo_muscular": "Piernas",
+    "equipo": "Máquina de Prensa de Piernas",
+    "dificultad": "Intermedio",
+    "repeticiones": 10,
+    "series": 3
+  },
+  {
+    "id": 12,
+    "nombre": "Nuevo Ejercicio",
+    "grupoMuscular": "Piernas",
+    "equipo": "Barra",
+    "dificultad": "Media",
+    "repeticiones": 12,
+    "series": 3
+  },
+  {
+    "id": 13,
+    "nombre": "Nuevo Ejercicio",
+    "grupoMuscular": "Piernas",
+    "equipo": "Barra",
+    "dificultad": "Media",
+    "repeticiones": 12,
+    "series": 3
+  },
+  {
+    "id": 14,
+    "nombre": "Nuevo Ejercicio",
+    "grupoMuscular": "Piernas",
+    "equipo": "Barra",
+    "dificultad": "Media",
+    "repeticiones": 12,
+    "series": 3
+  },
+  {
+    "id": 15,
+    "nombre": "Nuevo Ejercicio",
+    "grupoMuscular": "Piernas",
+    "equipo": "Barra",
+    "dificultad": "Media",
+    "repeticiones": 12,
+    "series": 3
+  },
+  {
+    "id": 16,
+    "nombre": "Nuevo Ejercicio",
+    "grupoMuscular": "Piernas",
+    "equipo": "Barra",
+    "dificultad": "Media",
+    "repeticiones": 12,
+    "series": 3
+  },
+  {
+    "id": 17,
+    "nombre": "Nuevo Ejercicio",
+    "grupoMuscular": "Piernas",
+    "equipo": "Barra",
+    "dificultad": "Media",
+    "repeticiones": 12,
+    "series": 3
+  },
+  {
+    "id": 18,
+    "nombre": "Nuevo Ejercicio",
+    "grupoMuscular": "Piernas",
+    "equipo": "Barra",
+    "dificultad": "Media",
+    "repeticiones": 12,
+    "series": 3
+  },
+  {
+    "id": 18,
+    "nombre": "Nuevo Ejercicio",
+    "grupoMuscular": "Piernas",
+    "equipo": "Barra",
+    "dificultad": "Media",
+    "repeticiones": 12,
+    "series": 3
+  },
+  {
+    "id": 19,
+    "nombre": "Nuevo Ejercicio",
+    "grupoMuscular": "Piernas",
+    "equipo": "Barra",
+    "dificultad": "Media",
+    "repeticiones": 12,
+    "series": 3
+  },
+  {
+    "id": 20,
+    "nombre": "Nuevo Ejercicio",
+    "grupoMuscular": "Piernas",
+    "equipo": "Barra",
+    "dificultad": "Media",
+    "repeticiones": 12,
+    "series": 3
+  },
+  {
+    "id": 21,
+    "nombre": "Nuevo Ejercicio",
+    "grupoMuscular": "Piernas",
+    "equipo": "Barra",
+    "dificultad": "Media",
+    "repeticiones": 12,
+    "series": 3
+  },
+  {
+    "id": 22,
+    "nombre": "Nuevo Ejercicio",
+    "grupoMuscular": "Piernas",
+    "equipo": "Barra",
+    "dificultad": "Media",
+    "repeticiones": 12,
+    "series": 3
+  },
+  {
+    "id": 22,
+    "nombre": "Nuevo Ejercicio",
+    "grupoMuscular": "Piernas",
+    "equipo": "Barra",
+    "dificultad": "Media",
+    "repeticiones": 12,
+    "series": 3
+  },
+  {
+    "id": 22,
+    "nombre": "Nuevo Ejercicio",
+    "grupoMuscular": "Piernas",
+    "equipo": "Barra",
+    "dificultad": "Media",
+    "repeticiones": 12,
+    "series": 3
+  }
+]
