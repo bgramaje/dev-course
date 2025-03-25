@@ -61,7 +61,7 @@ app.post('/ejercicios', async (req, res) => {
       res.status(400).json({ message: 'Nombre y grupo muscular son obligatorios' });
     } else {
       const nuevoEjercicio = {
-        id: ejercicios.length + 1,
+        id: req.body.id ?? ejercicios.length + 1,
         nombre,
         grupoMuscular,
         equipo,

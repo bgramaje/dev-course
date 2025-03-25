@@ -38,6 +38,7 @@ describe('Ejercicios API', () => {
   describe('POST /ejercicios', () => {
     it('should create a new exercise', async () => {
       const ejercicio = {
+        id: 99,
         nombre: 'Nuevo Ejercicio',
         grupoMuscular: 'Piernas',
         equipo: 'Barra',
@@ -58,7 +59,7 @@ describe('Ejercicios API', () => {
         nombre: 'Ejercicio Actualizado',
         grupoMuscular: 'Brazos',
       };
-      const response = await api.put('/ejercicios/11').send(updatedEjercicio);
+      const response = await api.put('/ejercicios/99').send(updatedEjercicio);
       expect(response.status).to.equal(200);
       expect(response.body).to.have.property('nombre', updatedEjercicio.nombre);
       expect(response.body).to.have.property('grupoMuscular', updatedEjercicio.grupoMuscular);
@@ -67,7 +68,7 @@ describe('Ejercicios API', () => {
 
   describe('DELETE /ejercicios/:id', () => {
     it('should delete an exercise', async () => {
-      const response = await api.delete('/ejercicios/11');
+      const response = await api.delete('/ejercicios/99');
       expect(response.status).to.equal(204);
     });
   });

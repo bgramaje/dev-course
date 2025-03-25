@@ -73,8 +73,8 @@
   },
   {
     "id": 12,
-    "nombre": "Nuevo Ejercicio",
-    "grupoMuscular": "Piernas",
+    "nombre": "Ejercicio Actualizado",
+    "grupoMuscular": "Brazos",
     "equipo": "Barra",
     "dificultad": "Media",
     "repeticiones": 12,
@@ -190,6 +190,15 @@
   },
   {
     "id": 22,
+    "nombre": "Nuevo Ejercicio",
+    "grupoMuscular": "Piernas",
+    "equipo": "Barra",
+    "dificultad": "Media",
+    "repeticiones": 12,
+    "series": 3
+  },
+  {
+    "id": 23,
     "nombre": "Nuevo Ejercicio",
     "grupoMuscular": "Piernas",
     "equipo": "Barra",
