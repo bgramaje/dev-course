@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
 /* eslint-disable no-underscore-dangle */
 // app.js
@@ -19,11 +18,6 @@ const openFile = async () => {
   const filePath = path.join(__dirname, 'data/ejercicios_gym.json');
   const data = await fs.readFile(filePath, 'utf8');
   return JSON.parse(data);
-};
-
-const writeFile = async (data) => {
-  const filePath = path.join(__dirname, 'data/ejercicios_gym.json');
-  await fs.writeFile(filePath, JSON.stringify(data, null, 2));
 };
 
 /**
@@ -54,10 +48,12 @@ app.get('/ejercicios/:id', async (req, res) => {
   try {
     const ejercicios = await openFile();
     const id = parseInt(req.params.id, 10);
-    /**
-     * TODO: Leer un ejercicio dado el ID
-     */
-    res.status(200).json(/* TODO: Ejercicio encontrado */);
+    const ejercicio = ejercicios.find((e) => e.id === id);
+    if (!ejercicio) {
+      res.status(404).json({ message: 'Ejercicio no encontrado' });
+    } else {
+      res.json(ejercicio);
+    }
   } catch (error) {
     console.error('Error al leer el archivo:', error);
     res.status(500).json({ message: 'Error al leer el archivo' });
@@ -74,12 +70,26 @@ app.get('/ejercicios/:id', async (req, res) => {
 app.post('/ejercicios', async (req, res) => {
   try {
     const ejercicios = await openFile();
-
-    /**
-     * TODO: Crear un nuevo ejercicio
-     */
-    await writeFile(ejercicios);
-    res.status(201).json(/* TODO: Nuevo ejercicio */);
+    const {
+      nombre, grupoMuscular, equipo, dificultad, repeticiones, series,
+    } = req.body;
+    if (!nombre || !grupoMuscular) {
+      res.status(400).json({ message: 'Nombre y grupo muscular son obligatorios' });
+    } else {
+      const nuevoEjercicio = {
+        id: req.body.id ?? ejercicios.length + 1,
+        nombre,
+        grupoMuscular,
+        equipo,
+        dificultad,
+        repeticiones,
+        series,
+      };
+      ejercicios.push(nuevoEjercicio);
+      const filePath = path.join(__dirname, 'data/ejercicios_gym.json');
+      await fs.writeFile(filePath, JSON.stringify(ejercicios, null, 2));
+      res.status(201).json(nuevoEjercicio);
+    }
   } catch (error) {
     console.error('Error al escribir en el archivo:', error);
     res.status(500).json({ message: 'Error al escribir en el archivo' });
@@ -97,11 +107,23 @@ app.put('/ejercicios/:id', async (req, res) => {
   try {
     const ejercicios = await openFile();
     const id = parseInt(req.params.id, 10);
-    /**
-     * TODO: Editar un ejercicio dado el ID
-     */
-    await writeFile(ejercicios);
-    res.status(204).json(/* TODO: Ejercicio actualizado */);
+    const ejercicio = ejercicios.find((e) => e.id === id);
+    if (!ejercicio) {
+      res.status(404).json({ message: 'Ejercicio no encontrado' });
+    } else {
+      const {
+        nombre, grupoMuscular, equipo, dificultad, repeticiones, series,
+      } = req.body;
+      if (nombre) ejercicio.nombre = nombre;
+      if (grupoMuscular) ejercicio.grupoMuscular = grupoMuscular;
+      if (equipo) ejercicio.equipo = equipo;
+      if (dificultad) ejercicio.dificultad = dificultad;
+      if (repeticiones) ejercicio.repeticiones = repeticiones;
+      if (series) ejercicio.series = series;
+      const filePath = path.join(__dirname, 'data/ejercicios_gym.json');
+      await fs.writeFile(filePath, JSON.stringify(ejercicios, null, 2));
+      res.json(ejercicio);
+    }
   } catch (error) {
     console.error('Error al escribir en el archivo:', error);
     res.status(500).json({ message: 'Error al escribir en el archivo' });
@@ -120,11 +142,15 @@ app.delete('/ejercicios/:id', async (req, res) => {
     const ejercicios = await openFile();
 
     const id = parseInt(req.params.id, 10);
-    /**
-     * TODO: Borrar un ejercicio dado el ID
-     */
-    await writeFile(ejercicios);
-    res.status(204).json();
+    const index = ejercicios.findIndex((e) => e.id === id);
+    if (index === -1) {
+      res.status(404).json({ message: 'Ejercicio no encontrado' });
+    } else {
+      ejercicios.splice(index, 1);
+      const filePath = path.join(__dirname, 'data/ejercicios_gym.json');
+      await fs.writeFile(filePath, JSON.stringify(ejercicios, null, 2));
+      res.status(204).json();
+    }
   } catch (error) {
     console.error('Error al escribir en el archivo:', error);
     res.status(500).json({ message: 'Error al escribir en el archivo' });
