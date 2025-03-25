@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable import/extensions */
 import app from './app.js';
 

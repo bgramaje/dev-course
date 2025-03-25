@@ -2,7 +2,7 @@
 import supertest from 'supertest';
 import { expect } from 'chai';
 import {
-  beforeEach, describe, it, before,
+  describe, it, before,
 } from 'mocha';
 import app from '../app.js'; // Path to your Express app
 
@@ -12,10 +12,6 @@ describe('Ejercicios API', () => {
   before(async () => {
     const port = 4000;
     app.listen(port);
-  });
-  beforeEach(async () => {
-    // Clean up before each test
-    // Example: Remove all exercises from the database
   });
 
   describe('GET /ejercicios', () => {
@@ -28,7 +24,6 @@ describe('Ejercicios API', () => {
 
   describe('GET /ejercicios/:id', () => {
     it('should return a single exercise by id', async () => {
-      // Assuming you have an exercise with id 1
       const response = await api.get('/ejercicios/2');
       expect(response.status).to.equal(200);
       expect(response.body).to.have.property('id', 2);
