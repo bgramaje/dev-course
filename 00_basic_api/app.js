@@ -20,7 +20,13 @@ const openFile = async () => {
   return JSON.parse(data);
 };
 
-// Ruta para leer los ejercicios
+/**
+ * GET /ejercicios
+ * Leer todos los ejercicios
+ * @param {object} req
+ * @param {object} res
+ * @returns {array} Ejercicios
+ */
 app.get('/ejercicios', async (req, res) => {
   try {
     const ejercicios = await openFile();
@@ -31,9 +37,13 @@ app.get('/ejercicios', async (req, res) => {
   }
 });
 
-// CRUD Endpoints
-
-// GET: Leer un ejercicio por ID
+/**
+ * GET /ejercicios/:id
+ * Lee un ejercicio por ID
+ * @param {object} req
+ * @param {object} res
+ * @returns {object} ejercicio
+ */
 app.get('/ejercicios/:id', async (req, res) => {
   try {
     const ejercicios = await openFile();
@@ -50,7 +60,13 @@ app.get('/ejercicios/:id', async (req, res) => {
   }
 });
 
-// POST: Crear un nuevo ejercicio
+/**
+ * POST /ejercicios
+ * Crear un nuevo ejercicio
+ * @param {object} req
+ * @param {object} res
+ * @returns {object} ejercicio
+ */
 app.post('/ejercicios', async (req, res) => {
   try {
     const ejercicios = await openFile();
@@ -80,7 +96,13 @@ app.post('/ejercicios', async (req, res) => {
   }
 });
 
-// PUT: Actualizar un ejercicio
+/**
+ * PUT /ejercicios/:id
+ * Actualizar un ejercicio
+ * @param {object} req
+ * @param {object} res
+ * @returns {object} ejercicio
+ */
 app.put('/ejercicios/:id', async (req, res) => {
   try {
     const ejercicios = await openFile();
@@ -109,7 +131,13 @@ app.put('/ejercicios/:id', async (req, res) => {
   }
 });
 
-// DELETE: Eliminar un ejercicio
+/**
+ * DELETE /ejercicios/:id
+ * Eliminar un ejercicio
+ * @param {object} req
+ * @param {object} res
+ * @returns {object} ejercicio
+ */
 app.delete('/ejercicios/:id', async (req, res) => {
   try {
     const ejercicios = await openFile();
